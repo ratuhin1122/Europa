@@ -55,7 +55,7 @@ class ApplicantController extends Controller
     }
 
     public function destroy( $id) : RedirectResponse
-    {
+    {   // Delete The application
         $applicant = Applicant::findOrFail($id);
         $applicant->delete();
         return redirect()->route('dashboard')->with('error', 'Application deleted successfully');
